@@ -16,3 +16,6 @@ data
 
 # don't store SSL certs in repo!
 ssl
+
+.idea
+/.idea/

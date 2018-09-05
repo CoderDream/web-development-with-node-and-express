@@ -1,9 +1,9 @@
-var express = require('express');
+let express = require('express');
 
-var app = express();
+let app = express();
 
 // set up handlebars view engine
-var handlebars = require('express-handlebars')
+let handlebars = require('express3-handlebars')
 	.create({ defaultLayout:'main' });
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -12,7 +12,7 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(__dirname + '/public'));
 
-var fortuneCookies = [
+let fortuneCookies = [
 	"Conquer your fears or they will conquer you.",
 	"Rivers need springs.",
 	"Do not fear what you don't know.",
@@ -24,7 +24,7 @@ app.get('/', function(req, res) {
 	res.render('home');
 });
 app.get('/about', function(req,res){
-	var randomFortune = 
+	let randomFortune = 
 		fortuneCookies[Math.floor(Math.random() * fortuneCookies.length)];
 	res.render('about', { fortune: randomFortune });
 });
