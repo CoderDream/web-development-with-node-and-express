@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/EthanRBrown/web-development-with-node-and-express",
   "dependencies": {
-    "express": "~4.4.2",
-    "express-handlebars": "~0.5.0",
-    "chai": "~1.9.1"
+    "chai": "~1.9.1",
+    "express": "^4.16.3",
+    "express3-handlebars": "~0.5.2"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

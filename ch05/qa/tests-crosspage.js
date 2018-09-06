@@ -1,7 +1,7 @@
-var Browser = require('zombie'),
+let Browser = require('zombie'),
 	assert = require('chai').assert;
 
-var browser;
+let browser;
 
 suite('Cross-Page Tests', function(){
 
@@ -11,7 +11,7 @@ suite('Cross-Page Tests', function(){
 
 	test('requesting a group rate quote from the hood river tour page should ' +
 			'populate the hidden referrer field correctly', function(done){
-		var referrer = 'http://localhost:3000/tours/hood-river';
+		let referrer = 'http://localhost:3000/tours/hood-river';
 		browser.visit(referrer, function(){
 			browser.clickLink('.requestGroupRate', function(){
 				assert(browser.field('referrer').value === referrer);
@@ -22,7 +22,7 @@ suite('Cross-Page Tests', function(){
 
 	test('requesting a group rate from the oregon coast tour page should ' +
 			'populate the hidden referrer field correctly', function(done){
-		var referrer = 'http://localhost:3000/tours/oregon-coast';
+		let referrer = 'http://localhost:3000/tours/oregon-coast';
 		browser.visit(referrer, function(){
 			browser.clickLink('.requestGroupRate', function(){
 				assert(browser.field('referrer').value === referrer);

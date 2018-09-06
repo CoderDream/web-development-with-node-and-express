@@ -1,5 +1,5 @@
-var fortune = require('../lib/fortune.js');
-var expect = require('chai').expect;
+let fortune = require('../lib/fortune.js');
+let expect = require('chai').expect;
 
 suite('Fortune cookie tests', function(){
 
