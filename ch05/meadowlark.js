@@ -4,7 +4,7 @@ let fortune = require('./lib/fortune.js');
 let app = express();
 
 // set up handlebars view engine
-let handlebars = require('express3-handlebars').create({
+let handlebars = require('express-handlebars').create({
     defaultLayout: 'main',
     helpers: {
         section: function (name, options) {
@@ -23,8 +23,8 @@ app.use(express.static(__dirname + '/public'));
 
 // set 'showTests' context property if the querystring contains test=1
 app.use(function (req, res, next) {
-    res.locals.showTests = app.get('env') !== 'production' &&
-        req.query.test === '1';
+    console.log('env: \t' + app.get('env')); // default env: 	development
+    res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
     next();
 });
 
